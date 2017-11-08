@@ -32,14 +32,23 @@ direction_six_ten = [direction: "north"]
 # return list of trains for certain directions
 # call once for east and once for north
 
+#
+# def train_list(array, direction)
+# route = []
+#   array.each do |course|
+#       if course[:direction] == direction
+#       route << course[:train]
+#       end
+#     end
+#     route
+# end
+# puts train_list(train_schedule, "east")
+# puts train_list(train_schedule, "north")
 
-def train_list(array, direction)
-route = []
-  array.each do |course|
-    if course[:direction] == direction
-      route << course[:train]
-    end
-    end
-    route
+train_schedule.each do |h|
+  if h[:direction] == "east"
+    h[:first_departure_time] = 10
+  end
 end
-puts train_list(train_schedule, "east")
+
+puts train_schedule
